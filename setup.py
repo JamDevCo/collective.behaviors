@@ -11,6 +11,9 @@ long_description = '\n\n'.join([
     open('CHANGES.rst').read(),
 ])
 
+dependency_links = [
+    'https://github.com/JamaicanDevelopers/collective.vocabularies/tarball/master'
+]
 
 setup(
     name='collective.behaviors',
@@ -42,6 +45,7 @@ setup(
         'Products.GenericSetup>=1.8.2',
         'setuptools',
         'z3c.jbot',
+        'collective.vocabularies'
     ],
     extras_require={
         'test': [

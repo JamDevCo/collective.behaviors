@@ -16,5 +16,14 @@
       name="collective.behaviors"
       directory="static"
       />
+      
+   <browser:page
+    for="plone.app.layout.navigation.interfaces.INavigationRoot"
+    name="datagrid_image"
+    permission="zope2.Public"
+    class=".base64.Base64Image"
+    allowed_attributes="get"
+    />
+
 
 </configure>
