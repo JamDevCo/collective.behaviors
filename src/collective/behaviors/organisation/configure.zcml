@@ -25,5 +25,23 @@
         provides=".behaviors.IOrganisation"
         zcml:condition="have collective.behaviors.organisation"
         />
+        
+  <adapter factory=".indexers.founders" name="founders" />
+  <adapter factory=".indexers.organisation_type" name="organisation_type" />
+  <adapter factory=".indexers.industry" name="industry" />
+  
+  
+    <genericsetup:upgradeSteps
+        source="1000"
+        destination="1001"
+        profile="collective.behaviors:organisation">
+        
+        <genericsetup:upgradeDepends
+          title="Update catalog"
+          description=""
+          import_steps="catalog"
+          />
+      
+    </genericsetup:upgradeSteps>
 
 </configure>

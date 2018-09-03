@@ -18,6 +18,8 @@ from plone.app.z3cform.widget import AjaxSelectFieldWidget, SelectFieldWidget
 from plone.formwidget.namedfile.widget import NamedImageFieldWidget
 from collective.z3cform.datagridfield import BlockDataGridFieldFactory
 from collective.z3cform.datagridfield import DictRow
+from plone.app.dexterity.behaviors.metadata import Ownership
+
 from collective.behaviors import _, util
 
 
@@ -42,12 +44,39 @@ class IOrganisation(model.Schema, IEntity):
         'industry',
         SelectFieldWidget
     )
+    
     date_founded = schema.Date(
         title=_(u"Date Founded"),
         required=False
     )
+    
     organisation_size = schema.Choice(
         title=_(u"Organisation Size"),
         vocabulary=u"collective.vocabularies.organisation.sizes",
         required=True,
+    )
+    
+    model.fieldset(
+        'ownership',
+        label=_(
+            'label_schema_ownership',
+            default=u'Ownership'
+        ),
+        fields=['founders'],
+    )
+
+    founders = schema.Tuple(
+        title=_(u'label_creators', u'Founders'),
+        description=_(
+            u'help_founders',
+            default=u'Persons who started the business, company or entity.'
+        ),
+        value_type=schema.TextLine(),
+        required=False,
+        missing_value=(),
+    )
+    directives.widget(
+        'founders',
+        AjaxSelectFieldWidget,
+        vocabulary='plone.app.vocabularies.Users'
     )

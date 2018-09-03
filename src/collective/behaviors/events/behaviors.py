@@ -1,5 +1,4 @@
 import uuid
-from Products.CMFCore.interfaces import IDublinCore
 from plone.autoform import directives
 from zope.schema.interfaces import IFromUnicode
 from plone.autoform.interfaces import IFormFieldProvider

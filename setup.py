@@ -12,12 +12,12 @@ long_description = '\n\n'.join([
 ])
 
 dependency_links = [
-    'https://github.com/JamaicanDevelopers/collective.vocabularies/tarball/master'
+    # 'https://github.com/JamaicanDevelopers/collective.vocabularies/tarball/master'
 ]
 
 setup(
     name='collective.behaviors',
-    version='1.0a1',
+    version='1.0.0',
     description="Add additional behaviors to Plone based on the given categories.",
     long_description=long_description,
     # Get more from https://pypi.python.org/pypi?%3Aaction=list_classifiers

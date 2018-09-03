@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0a1 (unreleased)
+1.0.0 (unreleased)
 ------------------
-- Adds behaviors for Organisation and Events. Committed by @b4oshany
+- Adds behaviors and indexers for Organisation and Events. Committed by @b4oshany
 - Initial release. Comitted by @b4oshany
