@@ -6,34 +6,18 @@
 collective.behaviors
 ==============================================================================
 
-Tell me what your product does
+Adds the following behaviors to your content type:
 
-Features
---------
+- Organisation Structure
+- Event Speakers to the Event Content-Type
+- Event Sponsors to the Event Content-Type
 
-- Can be bullet points
+In addition, it adds additional catalogs and indexers for each behavior.
 
+### Features
 
-Examples
---------
-
-This add-on can be seen in action at the following sites:
-- Is there a page on the internet where everybody can see the features?
-
-
-Documentation
--------------
-
-Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
-
-
-Translations
-------------
-
-This product has been translated into
-
-- Klingon (thanks, K'Plai)
-
+- collective.behaviors.events
+- collective.behaviors.organisation
 
 Installation
 ------------
