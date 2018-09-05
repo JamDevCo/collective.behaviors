@@ -41,7 +41,6 @@ Contribute
 
 - Issue Tracker: https://github.com/collective/collective.behaviors/issues
 - Source Code: https://github.com/collective/collective.behaviors
-- Documentation: https://docs.plone.org/foo/bar
 
 License
 -------
