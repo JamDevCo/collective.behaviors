@@ -14,7 +14,8 @@ Adds the following behaviors to your content type:
 
 In addition, it adds additional catalogs and indexers for each behavior.
 
-### Features
+Features
+------------
 
 - collective.behaviors.events
 - collective.behaviors.organisation
