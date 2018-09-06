@@ -24,6 +24,14 @@
     class=".base64.Base64Image"
     allowed_attributes="get"
     />
+    
+    <browser:page
+      name="containers_as_creators"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      class=".controlpanel.ParentTitleAsCreatorVCPView"
+      permission="cmf.ManagePortal"
+      />
+
 
 
 </configure>

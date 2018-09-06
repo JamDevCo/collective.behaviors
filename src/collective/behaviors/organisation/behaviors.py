@@ -13,8 +13,12 @@ from plone.schema import Email
 from plone.app.users.schema import checkEmailAddress
 from plone.namedfile.field import NamedBlobImage
 from zope.interface import Interface
-from plone.app.z3cform.widget import AjaxSelectFieldWidget, SelectFieldWidget
-
+from plone.app.z3cform.widget import (
+    AjaxSelectFieldWidget,
+    SelectFieldWidget,
+    LinkWidget,
+    DateWidget
+)
 from plone.formwidget.namedfile.widget import NamedImageFieldWidget
 from collective.z3cform.datagridfield import BlockDataGridFieldFactory
 from collective.z3cform.datagridfield import DictRow
@@ -48,6 +52,10 @@ class IOrganisation(model.Schema, IEntity):
     date_founded = schema.Date(
         title=_(u"Date Founded"),
         required=False
+    )
+    directives.widget(
+        'date_founded',
+        DateWidget
     )
     
     organisation_size = schema.Choice(

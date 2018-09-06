@@ -9,6 +9,7 @@
 
   <includeDependencies package="." />
   <include file="meta.zcml"/>
+  <include file="general.zcml"/>
 
   <include package=".browser" />
   <include  package=".events" />
@@ -36,5 +37,13 @@
   <utility
       factory=".setuphandlers.HiddenProfiles"
       name="collective.behaviors-hiddenprofiles" />
+
+  <utility
+      component=".vocabs.allowed_containers_as_creator_vocab"
+      provides="zope.schema.interfaces.IVocabularyFactory"
+      name="collective.behaviors.vocabularies.IParentTitleAsCreator"
+      />
+      
+  <include file="upgrades.zcml"/>
 
 </configure>

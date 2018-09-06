@@ -12,6 +12,7 @@ from plone.schema import Email
 from plone.app.users.schema import checkEmailAddress
 from plone.namedfile.field import NamedBlobImage
 
+from plone.app.z3cform.widget import LinkWidget
 from plone.formwidget.namedfile.widget import NamedImageFieldWidget
 from collective.z3cform.datagridfield import BlockDataGridFieldFactory
 from collective.z3cform.datagridfield import DictRow
@@ -50,6 +51,10 @@ class ISpeaker(model.Schema):
         title=_(u'label_website', default=u'Website'),
         description=_(u'help_website', default=u''),
         required=False
+    )
+    directives.widget(
+        'website',
+        LinkWidget
     )
     phone = schema.TextLine(
         title=_(u'label_phone', default=u'Phone'),
@@ -108,6 +113,10 @@ class ISponsor(model.Schema):
         title=_(u'label_website', default=u'Website'),
         description=_(u'help_website', default=u''),
         required=False
+    )
+    directives.widget(
+        'website',
+        LinkWidget
     )
     picture = schema.ASCII(
         title=_(u"Please upload an image"),
