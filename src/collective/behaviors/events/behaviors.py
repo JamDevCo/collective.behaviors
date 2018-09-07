@@ -114,10 +114,6 @@ class ISponsor(model.Schema):
         description=_(u'help_website', default=u''),
         required=False
     )
-    directives.widget(
-        'website',
-        LinkWidget
-    )
     picture = schema.ASCII(
         title=_(u"Please upload an image"),
         required=False,
