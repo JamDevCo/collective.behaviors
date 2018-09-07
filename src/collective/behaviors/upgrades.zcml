@@ -15,7 +15,7 @@
         <genericsetup:upgradeDepends
           title="Adds Parent's Title as Creator"
           description=""
-          import_steps="plone.app.registry registry"
+          import_steps="plone.app.registry"
           />
       
     </genericsetup:upgradeSteps>
