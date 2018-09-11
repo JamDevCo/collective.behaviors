@@ -11,6 +11,7 @@ Adds the following behaviors to your content type:
 - Organisation Structure
 - Event Speakers to the Event Content-Type
 - Event Sponsors to the Event Content-Type
+- Allow the title of aq_parent as a creator for the Content-Type.
 
 In addition, it adds additional catalogs and indexers for each behavior.
 
@@ -19,6 +20,7 @@ Features
 
 - collective.behaviors.events
 - collective.behaviors.organisation
+- collective.behaviors.vocabularies.IParentTitleAsCreator
 
 Installation
 ------------

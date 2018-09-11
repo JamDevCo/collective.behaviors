@@ -2,6 +2,11 @@ Changelog
 =========
 
 
+v1.2.0
+--------------
+- Updates the registry and controlpanel.
+
+
 v1.1.0 - v1.1.1
 ----------------
 - Adds a behavior that allows the title of the parent node to be added as a creator for the content node @b4oshany.
