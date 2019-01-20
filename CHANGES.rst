@@ -1,6 +1,10 @@
 Changelog
 =========
 
+v1.2.1
+---------------
+- Adds collective.dexteritytextindexer the profile metadata.
+
 
 v1.2.0
 --------------

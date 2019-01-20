@@ -1,14 +1,15 @@
 
-from zope import schema
-from plone.supermodel import model
+from collective import dexteritytextindexer
 from plone.autoform import directives
+from plone.autoform.interfaces import IFormFieldProvider
+from plone.app.contenttypes.interfaces import IDocument
+from plone.app.z3cform.widget import AjaxSelectFieldWidget
+from plone.dexterity.content import Container
+from plone.supermodel import model
+from zope import schema
 from zope.interface import provider
 from zope.interface import implementer
-from plone.app.z3cform.widget import AjaxSelectFieldWidget
-from plone.autoform.interfaces import IFormFieldProvider
 from zope.interface import alsoProvides
-from plone.dexterity.content import Container
-from plone.app.contenttypes.interfaces import IDocument
 
 from collective.behaviors import _
 from collective.behaviors.util import get_registry_entry
@@ -17,6 +18,7 @@ from collective.behaviors.util import get_registry_entry
 @provider(IFormFieldProvider)
 class IParentTitleAsCreator(model.Schema):
     
+    dexteritytextindexer.searchable('container_as_creator')
     container_as_creator = schema.Bool(
         title=_(u'label_container_as_creator', u'Allow Parent\'s Title as a '
                 u'createor'),

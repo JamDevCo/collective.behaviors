@@ -27,7 +27,7 @@ class IParentTitleAsCreator(form.Schema):
         ),
         value_type=schema.TextLine(),
         required=False,
-        missing_value=(),
+        missing_value="",
     )
 
 

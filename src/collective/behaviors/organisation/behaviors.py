@@ -1,28 +1,29 @@
 import uuid
-from Products.CMFCore.interfaces import IDublinCore
+
+from collective import dexteritytextindexer
+from collective.z3cform.datagridfield import BlockDataGridFieldFactory
+from collective.z3cform.datagridfield import DictRow
+from plone.app.users.schema import checkEmailAddress
 from plone.autoform import directives
-from zope.schema.interfaces import IFromUnicode
 from plone.autoform.interfaces import IFormFieldProvider
-from zope import schema
+from plone.app.dexterity.behaviors.metadata import Ownership
+from plone.app.z3cform.widget import (
+    AjaxSelectFieldWidget,
+    DateWidget,
+    LinkWidget,
+    SelectFieldWidget
+)
+from plone.formwidget.namedfile.widget import NamedImageFieldWidget
+from plone.namedfile.field import NamedBlobImage
+from plone.schema import Email
 from plone.supermodel import model
-from plone.autoform import directives
+from zope import schema
 from zope.component import adapter
 from zope.interface import implementer
 from zope.interface import provider
-from plone.schema import Email
-from plone.app.users.schema import checkEmailAddress
-from plone.namedfile.field import NamedBlobImage
 from zope.interface import Interface
-from plone.app.z3cform.widget import (
-    AjaxSelectFieldWidget,
-    SelectFieldWidget,
-    LinkWidget,
-    DateWidget
-)
-from plone.formwidget.namedfile.widget import NamedImageFieldWidget
-from collective.z3cform.datagridfield import BlockDataGridFieldFactory
-from collective.z3cform.datagridfield import DictRow
-from plone.app.dexterity.behaviors.metadata import Ownership
+from zope.schema.interfaces import IFromUnicode
+from Products.CMFCore.interfaces import IDublinCore
 
 from collective.behaviors import _, util
 
@@ -34,6 +35,11 @@ class IEntity(Interface):
 
 @provider(IFormFieldProvider)
 class IOrganisation(model.Schema, IEntity):
+
+    dexteritytextindexer.searchable('organisation_type')
+    dexteritytextindexer.searchable('industry')
+    dexteritytextindexer.searchable('founders')
+
     organisation_type = schema.Choice(
         title=_(u"Organisation Type"),
         vocabulary=u"collective.vocabularies.organisation.types",
@@ -81,7 +87,7 @@ class IOrganisation(model.Schema, IEntity):
         ),
         value_type=schema.TextLine(),
         required=False,
-        missing_value=(),
+        missing_value="",
     )
     directives.widget(
         'founders',
