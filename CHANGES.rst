@@ -3,7 +3,7 @@ Changelog
 
 v1.2.1
 ---------------
-- Adds collective.dexteritytextindexer the profile metadata.
+- Adds collective.dexteritytextindexer to the buildout.
 
 
 v1.2.0
